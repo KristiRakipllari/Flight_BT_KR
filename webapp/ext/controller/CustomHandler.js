@@ -5,13 +5,12 @@ sap.ui.define([
 
     return {
         gotoweb: function(oContext, aSelectedContexts) {
-            if (!aSelectedContexts || aSelectedContexts.length === 0) {
-                MessageToast.show("No item selected.");
-                return;
-            }
+            // Use selected context if available, otherwise fallback to oContext
+            const oSelected = (aSelectedContexts && aSelectedContexts.length > 0) 
+                ? aSelectedContexts[0].getObject() 
+                : oContext;
 
-            const oSelected = aSelectedContexts[0].getObject();
-            console.log("Selected object:", oSelected);
+            console.log("Context object:", oSelected);
 
             const url = oSelected.Url;
             console.log("URL value:", url);
