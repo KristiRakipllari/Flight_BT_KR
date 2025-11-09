@@ -162,6 +162,30 @@
                     "route": "FlightDetailsKRObjectPage"
                   }
                 }
+              },
+              "content": {
+                "body": {
+                  "sections": {
+                    "GeoMap": {
+                      "template": "zflightbootcamp.ext.fragment.GeoMap",
+                      "position": {
+                        "placement": "After",
+                        "anchor": "GeneralInfo"
+                      },
+                      "title": "{i18n>itinerary}"
+                    }
+                  }
+                },
+                "header": {
+                  "actions": {
+                    "gotoweb": {
+                      "press": "zflightbootcamp.ext.controller.CustomHandler.gotoweb",
+                      "visible": true,
+                      "enabled": true,
+                      "text": "Go to Web"
+                    }
+                  }
+                }
               }
             }
           }
